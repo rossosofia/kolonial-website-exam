@@ -1,0 +1,78 @@
+:root {
+  --red: #ee3035;
+  --blue: #76b3e2;
+  --yellow: #f0c22f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "barlow", serif;
+}
+
+/* --- navbar --- */
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  padding-bottom: 1rem;
+}
+
+.nav-bar {
+  grid-column: 2/-2;
+  position: sticky;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav-bar img {
+  max-height: 50px;
+  padding: 1rem 0 1rem 0;
+}
+
+ul {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul li a {
+  font-size: calc(8px + 0.4vw);
+  text-decoration: none;
+  color: black;
+}
+
+ul li a:active {
+  font-weight: bold;
+}
+
+/* we want to change the CSS for the desktop view and not the other way around. We define the mobile version first and then everything else */
+@media only screen and (min-width: 600px) {
+  .nav-bar {
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  .nav-bar img {
+    max-height: 70px;
+  }
+
+  ul {
+    width: max-content;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  ul li a:hover {
+    text-decoration: underline #76b3e2 3px;
+    text-underline-offset: 5px;
+  }
+}
