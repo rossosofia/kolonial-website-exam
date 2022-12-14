@@ -19,12 +19,14 @@ html {
 header {
   display: grid;
   grid-template-columns: 1fr 8fr 1fr;
-  padding-bottom: 1rem;
+  padding: 1rem 0 1rem 0;
+  position: fixed;
+  width: 100%;
+  background-color: white;
 }
 
 .nav-bar {
   grid-column: 2/-2;
-  position: sticky;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
@@ -33,7 +35,6 @@ header {
 
 .nav-bar img {
   max-height: 50px;
-  padding: 1rem 0 1rem 0;
 }
 
 ul {
@@ -41,6 +42,7 @@ ul {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  padding-top: 0.5rem;
 }
 
 ul li a {
@@ -53,8 +55,38 @@ ul li a:active {
   font-weight: bold;
 }
 
+/* --- who we are --- */
+
+.who-we-are {
+  background-color: var(--red);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.section-1-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-1-home img {
+  max-width: 50%;
+  /* for the size we need to try that weird thing with 3 dimensions */
+  padding-bottom: 3rem;
+}
+
+.section-1-home p {
+  max-width: 60%;
+  text-align: center;
+  color: white;
+  font-size: calc(10px + 0.4vw);
+  padding-bottom: 3rem;
+}
+
 /* we want to change the CSS for the desktop view and not the other way around. We define the mobile version first and then everything else */
 @media only screen and (min-width: 600px) {
+  /* --- nav bar --- */
   .nav-bar {
     flex-flow: row wrap;
     justify-content: space-between;
@@ -69,10 +101,32 @@ ul li a:active {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+    padding-top: 0;
   }
 
   ul li a:hover {
     text-decoration: underline #76b3e2 3px;
     text-underline-offset: 5px;
+  }
+
+  /* section 1 */
+
+  video {
+  }
+
+  .who-we-are {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    height: 100vh;
+  }
+
+  .section-1-home img {
+    max-width: 50%;
+    /* for the size we need to try that weird thing with 3 dimensions */
+    padding-bottom: 3rem;
+  }
+
+  .section-1-home p {
+    padding-bottom: 0;
   }
 }
