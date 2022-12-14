@@ -57,26 +57,26 @@ ul li a:active {
 
 /* --- who we are --- */
 
-.who-we-are {
+.home {
   background-color: var(--red);
   display: grid;
   grid-template-columns: 1fr;
 }
 
-.section-1-home {
+.section-1-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.section-1-home img {
+.section-1-text img {
   max-width: 50%;
   /* for the size we need to try that weird thing with 3 dimensions */
   padding-bottom: 3rem;
 }
 
-.section-1-home p {
+.section-1-text p {
   max-width: 60%;
   text-align: center;
   color: white;
@@ -114,19 +114,19 @@ ul li a:active {
   video {
   }
 
-  .who-we-are {
+  .home {
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
     height: 100vh;
   }
 
-  .section-1-home img {
+  .section-1-text img {
     max-width: 50%;
     /* for the size we need to try that weird thing with 3 dimensions */
     padding-bottom: 3rem;
   }
 
-  .section-1-home p {
+  .section-1-text p {
     padding-bottom: 0;
   }
 }
