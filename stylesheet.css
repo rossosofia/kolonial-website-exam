@@ -55,7 +55,42 @@ ul li a:active {
   font-weight: bold;
 }
 
-/* --- MEDIA QUERY --- we want to change the CSS for the desktop view and not the other way around. We define the mobile version first and then everything else */
+/* --- home --- */
+
+.home {
+  background-color: var(--red);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.home img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+}
+
+.section-1-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-1-text img {
+  max-width: 50%;
+  /* for the size we need to try that weird thing with 3 dimensions */
+  padding: 3rem 0 3rem 0;
+}
+
+.section-1-text p {
+  max-width: 60%;
+  text-align: center;
+  color: white;
+  font-size: calc(10px + 0.4vw);
+  padding-bottom: 3rem;
+}
+
+/* we want to change the CSS for the desktop view and not the other way around. We define the mobile version first and then everything else */
 @media only screen and (min-width: 600px) {
   /* --- nav bar --- */
   .nav-bar {
