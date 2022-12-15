@@ -14,19 +14,18 @@ html {
   font-family: "barlow", serif;
 }
 
+
 /* --- navbar --- */
 
 header {
   display: grid;
   grid-template-columns: 1fr 8fr 1fr;
-  padding: 1rem 0 1rem 0;
-  position: fixed;
-  width: 100%;
-  background-color: white;
+  padding-bottom: 1rem;
 }
 
 .nav-bar {
   grid-column: 2/-2;
+  position: sticky;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
@@ -35,6 +34,7 @@ header {
 
 .nav-bar img {
   max-height: 50px;
+  padding: 1rem 0 1rem 0;
 }
 
 ul {
@@ -42,7 +42,6 @@ ul {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding-top: 0.5rem;
 }
 
 ul li a {
