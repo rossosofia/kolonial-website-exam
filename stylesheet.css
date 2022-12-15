@@ -53,7 +53,7 @@ ul li a:active {
   font-weight: bold;
 }
 
-/* we want to change the CSS for the desktop view and not the other way around. We define the mobile version first and then everything else */
+/* --- MEDIA QUERY --- we want to change the CSS for the desktop view and not the other way around. We define the mobile version first and then everything else */
 @media only screen and (min-width: 600px) {
   .nav-bar {
     flex-flow: row wrap;
