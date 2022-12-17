@@ -4,6 +4,10 @@
   --yellow: #f0c22f;
 }
 
+@font-face {
+  font-family: TheBystanderSans;
+  src: url(fonts/BystanderSans-Bold.woff);
+}
 html {
   scroll-behavior: smooth;
 }
@@ -14,18 +18,45 @@ html {
   font-family: "barlow", serif;
 }
 
+h1 {
+  font-family: TheBystanderSans;
+  color: white;
+  text-shadow: 0.2rem 0.2rem black;
+  text-align: center;
+  font-size: calc(32px + 1vw);
+  padding: 3rem 0 1rem 0;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+}
 
 /* --- navbar --- */
 
 header {
   display: grid;
   grid-template-columns: 1fr 8fr 1fr;
-  padding-bottom: 1rem;
+}
+
+.section-2-who-we-are,
+.section-3-products,
+.section-4-producers,
+.section-5-where-are-we {
+  display: grid;
+  grid-template-columns: 1fr 4fr 4fr 1fr;
+  min-height: calc(100vh - 50px);
+  /* WIP - we need to understand how to divide the viewport between navbar and section */
+}
+
+.section-2-text {
+  grid-column: 2/-3;
 }
 
 .nav-bar {
   grid-column: 2/-2;
-  position: sticky;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
@@ -63,9 +94,9 @@ ul li a:active {
 }
 
 .home img {
-  object-fit: cover;
+  /* object-fit: cover; */
   width: 100%;
-  max-height: 100%;
+  /* max-height: 100%; */
 }
 
 .section-1-text {
@@ -81,7 +112,8 @@ ul li a:active {
   padding: 3rem 0 3rem 0;
 }
 
-.section-1-text p {
+.section-1-text p,
+.section-2-text p {
   max-width: 60%;
   text-align: center;
   color: white;
@@ -89,8 +121,34 @@ ul li a:active {
   padding-bottom: 3rem;
 }
 
+/* section 2 - who we are */
+.section-2-who-we-are {
+  background-color: var(--blue);
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.section-2-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.section-2-who-we-are img {
+  background-color: var(--blue);
+  align-self: center;
+  max-width: 100%;
+}
+
 /* we want to change the CSS for the desktop view and not the other way around. We define the mobile version first and then everything else */
 @media only screen and (min-width: 600px) {
+  h1 {
+    text-align: left;
+    font-size: calc(40px + 0.4vw);
+    padding-bottom: 3rem;
+  }
+
   /* --- nav bar --- */
   .nav-bar {
     flex-flow: row wrap;
@@ -98,7 +156,7 @@ ul li a:active {
   }
 
   .nav-bar img {
-    max-height: 70px;
+    max-height: 50px;
   }
 
   ul {
@@ -119,7 +177,6 @@ ul li a:active {
   .home {
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
-    height: 100vh;
   }
 
   .section-1-text img {
@@ -130,5 +187,25 @@ ul li a:active {
 
   .section-1-text p {
     padding-bottom: 0;
+  }
+
+  /* section 2 */
+
+  .section-2-who-we-are p {
+    text-align: left;
+    max-width: 80%;
+  }
+
+  .section-2-who-we-are {
+    background-color: var(--blue);
+    display: grid;
+    grid-template-columns: 1fr 4fr 4fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .section-2-text {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
   }
 }
