@@ -39,6 +39,7 @@ h1 {
 header {
   display: grid;
   grid-template-columns: 1fr 8fr 1fr;
+  padding-bottom: 1rem;
 }
 
 .section-2-who-we-are,
@@ -47,7 +48,7 @@ header {
 .section-5-where-are-we {
   display: grid;
   grid-template-columns: 1fr 4fr 4fr 1fr;
-  min-height: calc(100vh - 50px);
+  /* min-height: calc(100vh - 50px); */
   /* WIP - we need to understand how to divide the viewport between navbar and section */
 }
 
@@ -126,6 +127,7 @@ ul li a:active {
   background-color: var(--blue);
   display: flex;
   flex-direction: column-reverse;
+  padding: 3rem 0 3rem 0;
 }
 
 .section-2-text {
@@ -138,7 +140,7 @@ ul li a:active {
 .section-2-who-we-are img {
   background-color: var(--blue);
   align-self: center;
-  max-width: 100%;
+  max-width: 80%;
 }
 
 /* we want to change the CSS for the desktop view and not the other way around. We define the mobile version first and then everything else */
@@ -150,6 +152,9 @@ ul li a:active {
   }
 
   /* --- nav bar --- */
+  header {
+    padding-bottom: 0;
+  }
   .nav-bar {
     flex-flow: row wrap;
     justify-content: space-between;
@@ -207,5 +212,9 @@ ul li a:active {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .section-2-who-we-are img {
+    max-width: 100%;
   }
 }
