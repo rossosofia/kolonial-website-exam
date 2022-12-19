@@ -29,7 +29,6 @@ function setup() {
 function getGoodies() {
   let endpoint2 = endpoint + "?categories=2&_embed";
   console.log(endpoint2);
-  // with this method it's easier to console.log the data (array) with makes easier the debug (we can use the console). But in order to do this, we create a new variable with let, we changed the name and then we used endpoint + the url. this has to be done BEFORE fetching.
   fetch(endpoint2)
   .then(res => res.json())
   .then(setupGoodies);
@@ -54,7 +53,6 @@ function setupGoodies(catArray){
     fetch(endpoint3)
     .then(res => res.json())
     .then(setupProducers);
-    // getTheProducts();
   }
   
   function setupProducers(catArray2){
