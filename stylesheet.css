@@ -50,6 +50,7 @@ header {
   display: grid;
   grid-template-columns: 1fr 8fr 1fr;
   padding-bottom: 1rem;
+  z-index: 1;
 }
 
 .nav-bar {
@@ -100,6 +101,7 @@ ul li a:active {
 .section-2-text,
 .section-3-text,
 .section-4-text {
+  grid-column: 2/-2;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -158,9 +160,82 @@ ul li a:active {
 
 ul.images li img {
   max-width: 40vh;
-  /* TO FIX */
+}
+/* TO FIX */
+
+/* ----- PRODUCERS LOGOS ----- */
+.section-4-producers {
+  display: grid;
+  grid-template-columns: 1fr 4fr 4fr 1fr;
 }
 
+.producers-array {
+  grid-column: 2/-2;
+  display: flex;
+  flex-flow: wrap row;
+  gap: 1rem;
+  justify-content: space-evenly;
+}
+
+.company {
+  position: relative;
+  max-width: 40%;
+}
+
+.company-logo {
+  max-width: 100%;
+  opacity: 100%;
+}
+
+.company-logo:hover {
+  opacity: 10%;
+}
+
+.company-description {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  font-style: italic;
+  text-align: center;
+  font-size: calc(10px + 0.4vw);
+  z-index: -1;
+}
+
+.company-name {
+  text-align: center;
+}
+
+/* ----- */
+/* .producers-array {
+  grid-column: 2/-2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1.5rem;
+  place-items: center;
+}
+
+.company-logo {
+  max-width: 100%;
+  opacity: 100%;
+}
+
+.company-logo:hover {
+  opacity: 10%;
+}
+
+.company-description {
+  position: absolute;
+  top: 35%;
+  width: 100%;
+  font-style: italic;
+  text-align: center;
+  font-size: calc(10px + 0.4vw);
+  z-index: -1;
+}
+
+.company-name {
+  text-align: center;
+} */
 /* ----------------------------------- MEDIA QUERY ----------------------------------- */
 
 /* we want to change the CSS for the desktop view and not the other way around.
@@ -248,43 +323,23 @@ We define the mobile version first and then everything else */
   .section-2-who-we-are img {
     max-width: 100%;
   }
-
+  /* note: I'm using grid for desktop version and flexbox for mobile version. That's because with flexbox i couldn't reach the effect I wanted: in fact with spacebetween i was filling the entire row, but i couldn't impose a left alignmnet for the last row when there were less items that in the first. */
   .producers-array {
     grid-column: 2/4;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
     place-items: center;
   }
 
   .company {
-    position: relative;
+    max-width: 100%;
     padding-bottom: 1.5rem;
   }
 
-  .company-logo {
-    max-width: 100%;
-    opacity: 100%;
-  }
-
-  .company-logo:hover {
-    opacity: 10%;
-  }
-
   .company-description {
-    position: absolute;
     top: 35%;
-    width: 100%;
-    font-style: italic;
-    text-align: center;
-    font-size: calc(10px + 0.4vw);
-    z-index: -1;
   }
-
-  .company-name {
-    text-align: center;
-  }
-}
 
 /* NOTES TO MY SELF 
 You need to make an in-between media query for Tables. Headers don't look that good. I suspect it could probably be solved with a different grid...but we might as well just do a media query
@@ -320,3 +375,4 @@ maybe it's better to use media query
   }
   
   */
+}
