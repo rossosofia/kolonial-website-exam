@@ -31,7 +31,9 @@ h1 {
 h2 {
   font-family: TheBystanderSans;
   color: white;
-  font-size: calc(22px + 1vw);
+  font-size: calc(12px + 1vw);
+  padding-bottom: 0.8rem;
+  text-shadow: 0.1rem 0.1rem black;
 }
 
 .sticky {
@@ -119,6 +121,7 @@ ul li a:active {
   padding-bottom: 3rem;
 }
 
+.section-3-text p,
 .section-4-text p {
   color: black;
 }
@@ -163,6 +166,10 @@ ul.images li img {
 }
 /* TO FIX */
 
+figcaption {
+  max-width: 40vh;
+  font-size: calc(8px + 0.4vw);
+}
 /* ----- PRODUCERS LOGOS ----- */
 .section-4-producers {
   display: grid;
@@ -197,7 +204,7 @@ ul.images li img {
   width: 100%;
   font-style: italic;
   text-align: center;
-  font-size: calc(10px + 0.4vw);
+  font-size: calc(12px + 0.4vw);
   z-index: -1;
 }
 
@@ -341,7 +348,7 @@ We define the mobile version first and then everything else */
     top: 35%;
   }
 
-/* NOTES TO MY SELF 
+  /* NOTES TO MY SELF 
 You need to make an in-between media query for Tables. Headers don't look that good. I suspect it could probably be solved with a different grid...but we might as well just do a media query
 
 UPDATE: I've fixed h1 and p but p stil look bad very resizing (tablet size)
