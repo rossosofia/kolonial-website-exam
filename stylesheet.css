@@ -199,7 +199,7 @@ ul.images li img {
 }
 
 figcaption {
-    font-size: calc(8px + 0.4vw);
+  font-size: calc(8px + 0.4vw);
 }
 /* ----- PRODUCERS LOGOS ----- */
 .section-4-producers {
