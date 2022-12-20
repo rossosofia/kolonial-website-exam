@@ -62,10 +62,9 @@ function setupGoodies(catArray){
     catArray2.forEach(product => {
         const copy = template2.cloneNode(true);
         copy.querySelector("img.company-logo").src = product._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
-        copy.querySelector("p.company-name").textContent= `${product.title.rendered}`;
         copy.querySelector("p.company-description").textContent= `${product.description_}`;
         copy.querySelector("p.company-origin").textContent= `${product.location}`;
-
+        copy.querySelector("p.company-name").textContent= `${product.title.rendered}`;
         parentElement.appendChild(copy);
     });
 }
