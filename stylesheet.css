@@ -442,8 +442,6 @@ maybe it's better to use media query
   }
 
   footer img {
-    align-self: left;
-
     max-height: 50px;
   }
 }
