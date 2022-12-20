@@ -1,12 +1,12 @@
+@font-face {
+  font-family: TheBystanderSans;
+  src: url(fonts/BystanderSans-Bold.woff);
+}
+
 :root {
   --red: #ee3035;
   --blue: #76b3e2;
   --yellow: #f0c22f;
-}
-
-@font-face {
-  font-family: TheBystanderSans;
-  src: url(fonts/BystanderSans-Bold.woff);
 }
 
 html {
@@ -135,24 +135,24 @@ ul li a:active {
 
 /* --- Sections --- */
 
-.section-2-who-we-are {
+#section-2-who-we-are {
   background-color: var(--blue);
   display: flex;
   flex-direction: column-reverse;
   padding-top: 3rem;
 }
 
-.section-3-products {
+#section-3-products {
   background-color: var(--yellow);
 }
 
-.section-5-where-are-we {
+#section-5-where-are-we {
   background-color: var(--red);
 }
 
-.section-3-products,
-.section-4-producers,
-.section-5-where-are-we {
+#section-3-products,
+#section-4-producers,
+#section-5-where-are-we {
   padding-bottom: 3rem;
 }
 
@@ -190,7 +190,7 @@ ul li a:active {
   padding: 3rem 0 3rem 0;
 }
 
-.section-2-who-we-are img {
+#section-2-who-we-are img {
   align-self: center;
   max-width: 80%;
 }
@@ -359,28 +359,28 @@ We define the mobile version first and then everything else */
     gap: 1.5rem;
   }
 
-  .section-2-who-we-are,
-  .section-3-products,
-  .section-4-producers,
-  .section-5-where-are-we {
+  #section-2-who-we-are,
+  #section-3-products,
+  #section-4-producers,
+  #section-5-where-are-we {
     display: grid;
     grid-template-columns: 1fr 4fr 4fr 1fr;
     gap: 1.5rem;
     padding-bottom: 3rem;
   }
 
-  .section-2-who-we-are {
+  #section-2-who-we-are {
     background-color: var(--blue);
   }
 
-  .section-3-products {
+  #section-3-products {
     padding: 3rem 0 3rem 0;
   }
 
   .section-2-text,
   .section-3-text,
   .section-4-text,
-  .section-5-where-are-we h1 {
+  #section-5-where-are-we h1 {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -389,7 +389,7 @@ We define the mobile version first and then everything else */
 
   .section-3-text,
   .section-4-text,
-  .section-5-where-are-we h1 {
+  #section-5-where-are-we h1 {
     grid-column: 2/4;
   }
   div.opening-hours {
@@ -399,12 +399,15 @@ We define the mobile version first and then everything else */
   .section-1-text p {
     padding-bottom: 0;
   }
+  .section-2-text p {
+    text-align: left;
+    max-width: 80%;
+  }
 
-  .section-2-text p,
   .section-3-text p,
   .section-4-text p {
     text-align: left;
-    max-width: 80%;
+    max-width: 40%;
   }
 
   .section-1-text img {
@@ -413,7 +416,7 @@ We define the mobile version first and then everything else */
     padding: 3rem;
   }
 
-  .section-2-who-we-are img {
+  #section-2-who-we-are img {
     max-width: 100%;
   }
   /* note: I'm using grid for desktop version and flexbox for mobile version. That's because with flexbox i couldn't reach the effect I wanted: in fact with spacebetween i was filling the entire row, but i couldn't impose a left alignmnet for the last row when there were less items that in the first. */
