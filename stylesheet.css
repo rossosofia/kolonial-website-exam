@@ -38,12 +38,11 @@ h2 {
 
 h3 {
   color: white;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 div.opening-hours p,
 div.map p {
-  color: white;
   color: white;
   font-size: calc(10px + 0.4vw);
 }
@@ -59,47 +58,24 @@ div.map p {
   color: var(--blue);
 }
 
+.bgr-red {
+  background-color: var(--red);
+}
+
+.bgr-blue {
+  background-color: var(--blue);
+}
+
+.bgr-yellow {
+  background-color: var(--yellow);
+}
+
 /* --- NAV BAR --- */
 header {
   display: grid;
   grid-template-columns: 1fr 8fr 1fr;
   padding-bottom: 1rem;
   z-index: 1;
-}
-
-footer {
-  background-color: var(--yellow);
-  color: black;
-  display: grid;
-  grid-template-columns: 1fr 8fr 1fr;
-  padding: 2rem 0 2rem 0;
-}
-
-.footer-contents {
-  grid-column: 2/-2;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.footer-text {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.contacts p,
-.contacts h3,
-.social-media h3,
-.social-media a {
-  padding-bottom: 0.5rem;
-  font-size: calc(6px + 0.4vw);
-}
-
-footer img {
-  max-height: 100%;
-  align-self: center;
 }
 
 .nav-bar {
@@ -115,39 +91,34 @@ footer img {
   padding: 1rem 0 1rem 0;
 }
 
-/* THIS IS AFFECTING THE GALLERY, SHOULD BE RE-WRITTEN */
-ul {
+ul.nav {
   list-style: none;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-ul li a {
+ul.nav li a {
   font-size: calc(8px + 0.4vw);
   text-decoration: none;
   color: black;
 }
 
-ul li a:active {
+ul.nav li a:active {
   font-weight: bold;
 }
 
 /* --- Sections --- */
 
 #section-2-who-we-are {
-  background-color: var(--blue);
   display: flex;
   flex-direction: column-reverse;
   padding-top: 3rem;
 }
 
 #section-3-products {
-  background-color: var(--yellow);
-}
-
-#section-5-where-are-we {
-  background-color: var(--red);
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
 }
 
 #section-3-products,
@@ -175,7 +146,7 @@ ul li a:active {
   max-width: 60%;
   text-align: center;
   color: white;
-  font-size: calc(10px + 0.4vw);
+  font-size: calc(10px + 0.6vw);
   padding-bottom: 3rem;
 }
 
@@ -186,7 +157,6 @@ ul li a:active {
 
 .section-1-text img {
   max-width: 50%;
-  /* for the size we need to try that weird thing with 3 dimensions */
   padding: 3rem 0 3rem 0;
 }
 
@@ -198,7 +168,6 @@ ul li a:active {
 /* --- home/SECTION1 --- */
 
 .home {
-  background-color: var(--red);
   display: grid;
   grid-template-columns: 1fr;
 }
@@ -213,20 +182,24 @@ ul li a:active {
 
 .gallery {
   grid-column: 2/4;
-  display: grid;
   grid-gap: 1.5rem;
   overflow: hidden;
   scroll-behavior: smooth;
 }
 
-ul.images li img {
-  max-width: 40vh;
+div.gallery ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
 }
-/* TO FIX */
+
+ul.images li img {
+  max-width: 20vh;
+}
 
 figcaption {
-  max-width: 40vh;
-  font-size: calc(8px + 0.4vw);
+    font-size: calc(8px + 0.4vw);
 }
 /* ----- PRODUCERS LOGOS ----- */
 .section-4-producers {
@@ -270,38 +243,6 @@ figcaption {
   text-align: center;
 }
 
-/* ----- */
-/* .producers-array {
-  grid-column: 2/-2;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 1.5rem;
-  place-items: center;
-}
-
-.company-logo {
-  max-width: 100%;
-  opacity: 100%;
-}
-
-.company-logo:hover {
-  opacity: 10%;
-}
-
-.company-description {
-  position: absolute;
-  top: 35%;
-  width: 100%;
-  font-style: italic;
-  text-align: center;
-  font-size: calc(10px + 0.4vw);
-  z-index: -1;
-}
-
-.company-name {
-  text-align: center;
-} */
-
 div.opening-hours {
   display: flex;
   flex-direction: column;
@@ -315,6 +256,46 @@ div.map {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+}
+
+iframe {
+  max-width: 80%;
+}
+
+footer {
+  color: black;
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  padding: 2rem 0 2rem 0;
+}
+
+.footer-contents {
+  grid-column: 2/-2;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+footer img {
+  max-height: 80px;
+  align-self: center;
+}
+
+.contacts p,
+.contacts h3,
+.social-media h3,
+.social-media a {
+  padding-bottom: 0.5rem;
+  font-size: calc(8px + 0.4vw);
 }
 
 /* ----------------------------------- MEDIA QUERY ----------------------------------- */
@@ -341,7 +322,7 @@ We define the mobile version first and then everything else */
     max-height: 50px;
   }
 
-  ul {
+  ul.nav {
     width: max-content;
     display: flex;
     justify-content: space-between;
@@ -412,13 +393,17 @@ We define the mobile version first and then everything else */
 
   .section-1-text img {
     max-width: 50%;
-    /* for the size we could try that weird thing with 3 dimensions */
     padding: 3rem;
   }
 
   #section-2-who-we-are img {
     max-width: 100%;
   }
+
+  ul.images li img {
+    max-width: 35vh;
+  }
+
   /* note: I'm using grid for desktop version and flexbox for mobile version. That's because with flexbox i couldn't reach the effect I wanted: in fact with spacebetween i was filling the entire row, but i couldn't impose a left alignmnet for the last row when there were less items that in the first. */
   .producers-array {
     grid-column: 2/4;
@@ -441,47 +426,24 @@ We define the mobile version first and then everything else */
 You need to make an in-between media query for Tables. Headers don't look that good. I suspect it could probably be solved with a different grid...but we might as well just do a media query
 
 UPDATE: I've fixed h1 and p but p stil look bad very resizing (tablet size)
-maybe it's better to use media query
-
-
-  .section-2-text {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    grid-column: 2/3;
-  }
-
-  .section-3-text,
-  .section-4-text {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    grid-column: 2/4;
-  }
-
-    .section-2-text p {
-    text-align: left;
-    max-width: 80%;
-  }
-
-  .section-3-text p,
-  .section-4-text p {
-    text-align: left;
-    max-width: 40%;
-  }
-  
+maybe it's better to use media query  
   */
 
   div.opening-hours {
     text-align: left;
   }
 
-  footer {
-    flex-flow: row wrap;
+  iframe {
+    max-width: 100%;
+  }
+
+  .footer-contents {
     justify-content: space-between;
   }
 
   footer img {
+    align-self: left;
+
     max-height: 50px;
   }
 }
