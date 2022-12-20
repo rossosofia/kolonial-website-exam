@@ -8,7 +8,7 @@ element.addEventListener('wheel', (event) => {
 
 
     element.scrollBy({
-      left: event.deltaY < 0 ? -100 : 100,
+      left: event.deltaY < 0 ? -150 : 150,
     });
   });
 
@@ -64,6 +64,8 @@ function setupGoodies(catArray){
         copy.querySelector("img.company-logo").src = product._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
         copy.querySelector("p.company-name").textContent= `${product.title.rendered}`;
         copy.querySelector("p.company-description").textContent= `${product.description_}`;
+        copy.querySelector("p.company-origin").textContent= `${product.location}`;
+
         parentElement.appendChild(copy);
     });
 }

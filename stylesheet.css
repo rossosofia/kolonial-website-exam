@@ -228,10 +228,20 @@ figcaption {
   position: absolute;
   top: 40%;
   width: 100%;
-  font-style: italic;
   text-align: center;
   font-size: calc(12px + 0.4vw);
   z-index: -1;
+}
+
+.company-origin {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  font-style: italic;
+  text-align: center;
+  font-size: calc(10px + 0.4vw);
+  z-index: -1;
+  margin-top: 0.8rem;
 }
 
 .company-name {
