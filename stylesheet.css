@@ -165,17 +165,13 @@ ul.nav li a:active {
   max-width: 80%;
 }
 
-/* --- home/SECTION1 --- */
-
 .home {
   display: grid;
   grid-template-columns: 1fr;
 }
 
 .home img {
-  /* object-fit: cover; */
   width: 100%;
-  /* max-height: 100%; */
 }
 
 /* --- GALLERY HORIZONTAL SCROLLING --- */
@@ -424,13 +420,6 @@ We define the mobile version first and then everything else */
   .company-description {
     top: 35%;
   }
-
-  /* NOTES TO MY SELF 
-You need to make an in-between media query for Tables. Headers don't look that good. I suspect it could probably be solved with a different grid...but we might as well just do a media query
-
-UPDATE: I've fixed h1 and p but p stil look bad very resizing (tablet size)
-maybe it's better to use media query  
-  */
 
   div.opening-hours {
     text-align: left;
