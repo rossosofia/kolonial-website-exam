@@ -8,7 +8,7 @@ element.addEventListener('wheel', (event) => {
 
 
     element.scrollBy({
-      left: event.deltaY < 0 ? -150 : 150,
+      left: event.deltaY < 0 ? -300 : 300,
     });
   });
 
