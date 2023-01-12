@@ -15,7 +15,7 @@ element.addEventListener('wheel', (event) => {
 //   reference: https://dev.to/juanbelieni/how-to-create-horizontal-scroll-with-mouse-wheel-using-javascript-4cm5
   
 window.addEventListener("load", setup);
-const endpoint = "https://www.kamarini.dk/wp22e/wp-json/wp/v2/product";
+const endpoint = "https://www.kamarini.dk/wp22e/wp-json/wp/v2/product2";
 console.log ("group9isthebest");
 
 function setup() {
